@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#1b1f2a">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1b1f2a" />
+    </marker>
+    <marker id="open-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#1b1f2a" stroke-width="1.5" />
+    </marker>
+    <marker id="triangle" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="16" markerHeight="16" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#ffffff" stroke="#1b1f2a" stroke-width="1.2" />
+    </marker>
+  </defs>
+  <rect width="880" height="450" fill="#ffffff" />
+
+  <!-- Subject (abstract class) -->
+  <rect x="40" y="30" width="330" height="150" fill="#e8eef4" stroke="#1b1f2a" stroke-width="1.5" />
+  <text x="205" y="50" text-anchor="middle" font-size="12">«abstract»</text>
+  <text x="205" y="68" text-anchor="middle" font-weight="bold" font-style="italic" font-size="16">Subject</text>
+  <line x1="40" y1="78" x2="370" y2="78" stroke="#1b1f2a" />
+  <text x="52" y="98" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">- observers: Observer[]</text>
+  <line x1="40" y1="108" x2="370" y2="108" stroke="#1b1f2a" />
+  <text x="52" y="128" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">+ addObserver(o)</text>
+  <text x="52" y="148" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">+ removeObserver(o)</text>
+  <text x="52" y="168" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13"># notifyObservers()</text>
+
+  <!-- Observer (interface) -->
+  <rect x="530" y="30" width="310" height="82" fill="#f1faee" stroke="#1b1f2a" stroke-width="1.5" />
+  <text x="685" y="50" text-anchor="middle" font-size="12">«interface»</text>
+  <text x="685" y="68" text-anchor="middle" font-weight="bold" font-style="italic" font-size="16">Observer</text>
+  <line x1="530" y1="78" x2="840" y2="78" stroke="#1b1f2a" />
+  <text x="542" y="100" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">update(this)</text>
+
+  <!-- Subject -> Observer : observers -->
+  <line x1="370" y1="60" x2="528" y2="60" stroke="#1b1f2a" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="450" y="52" text-anchor="middle">observers</text>
+  <text x="512" y="82" text-anchor="end" font-size="12">0..*</text>
+
+  <!-- note on notifyObservers -->
+  <path d="M400,140 L600,140 L612,152 L612,200 L400,200 z" fill="#fffbe6" stroke="#8a7a3a" />
+  <path d="M600,140 L600,152 L612,152" fill="none" stroke="#8a7a3a" />
+  <text x="410" y="160" font-size="12" font-family="ui-monospace, Menlo, Consolas, monospace">for each observer o:</text>
+  <text x="424" y="178" font-size="12" font-family="ui-monospace, Menlo, Consolas, monospace">o.update(this)</text>
+  <text x="410" y="193" font-size="11" fill="#5b6472">this = the subject itself</text>
+  <line x1="372" y1="164" x2="400" y2="168" stroke="#8a7a3a" stroke-dasharray="3 3" />
+
+  <!-- ConcreteSubject -->
+  <rect x="40" y="290" width="330" height="100" fill="#ffffff" stroke="#1b1f2a" stroke-width="1.5" />
+  <text x="205" y="314" text-anchor="middle" font-weight="bold" font-size="16">ConcreteSubject</text>
+  <line x1="40" y1="326" x2="370" y2="326" stroke="#1b1f2a" />
+  <text x="52" y="348" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">getState()</text>
+  <text x="52" y="368" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">setState()</text>
+  <text x="52" y="382" font-size="11" fill="#5b6472">(calls notifyObservers() after each change)</text>
+
+  <!-- ConcreteSubject extends Subject (solid line, hollow triangle) -->
+  <line x1="205" y1="290" x2="205" y2="182" stroke="#1b1f2a" stroke-width="1.5" marker-end="url(#triangle)" />
+  <text x="215" y="240" font-size="12" fill="#5b6472">extends</text>
+
+  <!-- ConcreteObserver -->
+  <rect x="530" y="290" width="310" height="100" fill="#ffffff" stroke="#1b1f2a" stroke-width="1.5" />
+  <text x="685" y="314" text-anchor="middle" font-weight="bold" font-size="16">ConcreteObserver</text>
+  <line x1="530" y1="326" x2="840" y2="326" stroke="#1b1f2a" />
+  <text x="542" y="348" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">update(this)</text>
+  <text x="542" y="368" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">// other Observer specific</text>
+  <text x="542" y="384" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13">// methods</text>
+
+  <!-- ConcreteObserver implements Observer (dotted line, hollow triangle) -->
+  <line x1="685" y1="290" x2="685" y2="114" stroke="#1b1f2a" stroke-width="1.5" stroke-dasharray="3 4" marker-end="url(#triangle)" />
+  <text x="695" y="240" font-size="12" fill="#5b6472">implements</text>
+
+  <!-- ConcreteObserver reads ConcreteSubject (dependency, through update(this)) -->
+  <line x1="530" y1="340" x2="372" y2="340" stroke="#1b1f2a" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#open-arrow)" />
+  <text x="451" y="332" text-anchor="middle" font-size="13">reads</text>
+  <text x="451" y="360" text-anchor="middle" font-size="11" fill="#5b6472">the subject passed</text>
+  <text x="451" y="374" text-anchor="middle" font-size="11" fill="#5b6472">to update(this)</text>
+
+  <text x="40" y="430" font-size="11" fill="#5b6472">Based on the Observer pattern class diagram in Head First Design Patterns (Freeman &amp; Robson), changed to match this project's code.</text>
+</svg>

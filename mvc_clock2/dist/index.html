@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Clock</title>
+  </head>
+  <body>
+    <main>
+      <h1>Clock</h1>
+      <p class="muted">Click <b>Update display</b> to show the current time (it is also added to the log below).</p>
+
+      <!-- main.ts / Clock.ts write the time into this element -->
+      <p id="time">--:--</p>
+
+      <button id="update-button">Update display</button>
+
+      <!-- Clock.ts writes its log messages here (instead of to the console) -->
+      <h2>Log</h2>
+      <textarea id="log" rows="8" readonly></textarea>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

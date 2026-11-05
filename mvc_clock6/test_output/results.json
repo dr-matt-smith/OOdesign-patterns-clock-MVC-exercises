@@ -1,0 +1,73 @@
+{
+  "when": "11/5/2026, 11:57:38 AM",
+  "project": "mvc_clock6",
+  "tests": [
+    {
+      "name": "addMinutes moves the time forward",
+      "file": "tests/ClockModel_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "addMinutes wraps past midnight",
+      "file": "tests/ClockModel_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "addHours wraps backwards past midnight",
+      "file": "tests/ClockModel_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "observers are told about every change",
+      "file": "tests/ClockModel_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "a removed observer is not told about changes",
+      "file": "tests/ClockModel_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "there is no alarm to start with",
+      "file": "tests/ClockModel_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "the alarm rings only when the time matches the alarm time",
+      "file": "tests/ClockModel_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "clearing the alarm stops it ringing",
+      "file": "tests/ClockModel_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "format24 pads hours and minutes to 2 digits",
+      "file": "tests/timeFormat_test.ts",
+      "status": "pass",
+      "steps": []
+    },
+    {
+      "name": "format12 handles midnight, noon, morning and afternoon",
+      "file": "tests/timeFormat_test.ts",
+      "status": "pass",
+      "steps": []
+    }
+  ],
+  "typeErrors": [],
+  "lintWarnings": [],
+  "counts": {
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test report - mvc_clock5</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --text:#1b1f2a; --muted:#5b6472; --line:#dde1e7;
+          --good:#2a9d8f; --bad:#e63946; --warn:#f4a261; --none:#457b9d; --pre:#f1f3f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#16191f; --card:#1f232b; --text:#e8eaed; --muted:#9aa3ad; --line:#333a45; --pre:#14171c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 16px; }
+  header.banner { border-radius: 10px; padding: 16px 20px; color: #fff; margin-bottom: 16px; }
+  header.good { background: var(--good); } header.bad { background: var(--bad); } header.none { background: var(--none); }
+  header h1 { margin: 0; font-size: 24px; } header p { margin: 4px 0 0; opacity: .9; }
+  .tiles { display:grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin-bottom: 16px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px; text-align:center; }
+  .tile b { display:block; font-size: 26px; } .tile span { color: var(--muted); font-size: 13px; }
+  .tile.good b { color: var(--good); } .tile.bad b { color: var(--bad); } .tile.warn b { color: var(--warn); }
+  section { background:var(--card); border:1px solid var(--line); border-radius:10px; padding: 4px 16px 12px; margin-bottom: 16px; }
+  h2 { font-size: 18px; } h3 { font-size: 15px; margin: 12px 0 4px; }
+  pre { background:var(--pre); border:1px solid var(--line); border-radius:6px; padding:10px; overflow-x:auto; font-size:13px; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
+  .where { color: var(--muted); }
+  .actual { color: var(--bad); } .expected { color: var(--good); }
+  .icon { display:inline-block; width: 1.2em; font-weight: bold; }
+  .icon.pass { color: var(--good); } .icon.fail { color: var(--bad); } .icon.skip { color: var(--warn); }
+  .code { font: 12px ui-monospace, Menlo, monospace; padding: 1px 6px; border-radius: 4px; color: #fff; }
+  .code.error { background: var(--bad); } .code.warn { background: var(--warn); color: #1b1f2a; }
+  .hint { color: var(--muted); font-size: 13px; margin-left: 1em; }
+  ul.problems { padding-left: 1.2em; } ul.problems li { margin-bottom: 6px; }
+  ul.tree { list-style: none; padding-left: 1.2em; margin: 2px 0; }
+  h3.file { font-family: ui-monospace, Menlo, monospace; color: var(--muted); font-weight: normal; }
+  details summary { cursor: pointer; color: var(--muted); }
+  footer { color: var(--muted); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <header class="banner good">
+    <h1>All tests passing</h1>
+    <p>mvc_clock5 &middot; 11/5/2026, 10:47:47 AM</p>
+  </header>
+  <div class="tiles">
+    <div class="tile good"><b>7</b><span>passed</span></div>
+    <div class="tile "><b>0</b><span>failed</span></div>
+    <div class="tile "><b>0</b><span>skipped</span></div>
+    <div class="tile "><b>0</b><span>type errors</span></div>
+    <div class="tile "><b>0</b><span>lint warnings</span></div>
+  </div>
+  
+  
+  
+  
+  <section><h2>All tests</h2><h3 class="file">tests/ClockModel_test.ts</h3><ul class="tree"><li><span class="icon pass">✓</span> addMinutes moves the time forward</li><li><span class="icon pass">✓</span> addMinutes wraps past midnight</li><li><span class="icon pass">✓</span> addHours wraps backwards past midnight</li><li><span class="icon pass">✓</span> observers are told about every change</li><li><span class="icon pass">✓</span> a removed observer is not told about changes</li></ul><h3 class="file">tests/timeFormat_test.ts</h3><ul class="tree"><li><span class="icon pass">✓</span> format24 pads hours and minutes to 2 digits</li><li><span class="icon pass">✓</span> format12 handles midnight, noon, morning and afternoon</li></ul></section>
+  <section><details><summary>TAP output</summary><pre>TAP version 14
+# tests/ClockModel_test.ts
+ok 1 - addMinutes moves the time forward
+ok 2 - addMinutes wraps past midnight
+ok 3 - addHours wraps backwards past midnight
+ok 4 - observers are told about every change
+ok 5 - a removed observer is not told about changes
+# tests/timeFormat_test.ts
+ok 6 - format24 pads hours and minutes to 2 digits
+ok 7 - format12 handles midnight, noon, morning and afternoon
+1..7</pre></details></section>
+  <footer>Made by tools/test_report.ts &middot; Markdown version: summary.md</footer>
+</main>
+</body>
+</html>

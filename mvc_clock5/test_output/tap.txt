@@ -1,0 +1,11 @@
+TAP version 14
+# tests/ClockModel_test.ts
+ok 1 - addMinutes moves the time forward
+ok 2 - addMinutes wraps past midnight
+ok 3 - addHours wraps backwards past midnight
+ok 4 - observers are told about every change
+ok 5 - a removed observer is not told about changes
+# tests/timeFormat_test.ts
+ok 6 - format24 pads hours and minutes to 2 digits
+ok 7 - format12 handles midnight, noon, morning and afternoon
+1..7

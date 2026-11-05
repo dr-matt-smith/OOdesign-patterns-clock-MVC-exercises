@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 630" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1b1f2a">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#1d3557" stroke-width="1.5" />
+    </marker>
+    <marker id="triangle" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#ffffff" stroke="#1d3557" stroke-width="1.3" />
+    </marker>
+    <marker id="diamond" viewBox="0 0 16 10" refX="1" refY="5" markerWidth="16" markerHeight="10" orient="auto">
+      <path d="M1,5 L8,1 L15,5 L8,9 z" fill="#ffffff" stroke="#1d3557" stroke-width="1.3" />
+    </marker>
+  </defs>
+  <rect width="940" height="630" fill="#ffffff" />
+
+  <!-- Subject (abstract) -->
+  <rect x="330" y="20" width="300" height="140" fill="#e8eef4" stroke="#5b6472" stroke-width="1.5" />
+  <text x="480" y="38" text-anchor="middle" font-style="italic" font-family="system-ui, sans-serif" font-size="12">«abstract»</text>
+  <text x="480" y="56" text-anchor="middle" font-weight="bold" font-style="italic" font-family="system-ui, sans-serif" font-size="15">Subject</text>
+  <line x1="330" y1="66" x2="630" y2="66" stroke="#5b6472" />
+  <text x="340" y="86">- observers: Observer&lt;this&gt;[]</text>
+  <line x1="330" y1="96" x2="630" y2="96" stroke="#5b6472" />
+  <text x="340" y="116">+ addObserver(o)</text>
+  <text x="340" y="134">+ removeObserver(o)</text>
+  <text x="340" y="152"># notifyObservers()</text>
+
+  <!-- Observer<T> (interface) -->
+  <rect x="690" y="20" width="230" height="80" fill="#f1faee" stroke="#5b6472" stroke-width="1.5" />
+  <text x="805" y="38" text-anchor="middle" font-style="italic" font-family="system-ui, sans-serif" font-size="12">«interface»</text>
+  <text x="805" y="56" text-anchor="middle" font-weight="bold" font-style="italic" font-family="system-ui, sans-serif" font-size="15">Observer&lt;T&gt;</text>
+  <line x1="690" y1="66" x2="920" y2="66" stroke="#5b6472" />
+  <text x="700" y="88">+ update(subject: T)</text>
+
+  <!-- Subject <>- Observer : 0..* -->
+  <line x1="630" y1="80" x2="688" y2="80" stroke="#1d3557" stroke-width="1.5" marker-start="url(#diamond)" marker-end="url(#arrow)" />
+  <text x="662" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12">0..*</text>
+
+  <!-- ClockModel -->
+  <rect x="330" y="230" width="300" height="196" fill="#cde8f6" stroke="#457b9d" stroke-width="1.5" />
+  <text x="480" y="252" text-anchor="middle" font-weight="bold" font-family="system-ui, sans-serif" font-size="15">ClockModel</text>
+  <line x1="330" y1="262" x2="630" y2="262" stroke="#457b9d" />
+  <text x="340" y="282">- hours: number</text>
+  <text x="340" y="300">- minutes: number</text>
+  <line x1="330" y1="310" x2="630" y2="310" stroke="#457b9d" />
+  <text x="340" y="330">+ getHours(): number</text>
+  <text x="340" y="348">+ getMinutes(): number</text>
+  <text x="340" y="366">+ setTime(hours, minutes)</text>
+  <text x="340" y="384">+ setToNow()</text>
+  <text x="340" y="402">+ addMinutes(n: number)</text>
+  <text x="340" y="420">+ addHours(n: number)</text>
+
+  <!-- ClockModel extends Subject (solid line, hollow triangle) -->
+  <line x1="480" y1="230" x2="480" y2="162" stroke="#1d3557" stroke-width="1.5" marker-end="url(#triangle)" />
+  <text x="490" y="202" font-family="system-ui, sans-serif" font-size="12">extends</text>
+
+  <!-- ClockController -->
+  <rect x="20" y="280" width="240" height="100" fill="#fde2c0" stroke="#b5651d" stroke-width="1.5" />
+  <text x="140" y="302" text-anchor="middle" font-weight="bold" font-family="system-ui, sans-serif" font-size="15">ClockController</text>
+  <line x1="20" y1="312" x2="260" y2="312" stroke="#b5651d" />
+  <text x="30" y="332">- model: ClockModel</text>
+  <line x1="20" y1="342" x2="260" y2="342" stroke="#b5651d" />
+  <text x="30" y="364">+ connectButtons()</text>
+
+  <!-- ClockController -> ClockModel : changes -->
+  <line x1="260" y1="330" x2="328" y2="330" stroke="#1d3557" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="294" y="322" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12">changes</text>
+
+  <!-- Views -->
+  <rect x="250" y="520" width="200" height="90" fill="#d4f1e4" stroke="#2a9d8f" stroke-width="1.5" />
+  <text x="350" y="542" text-anchor="middle" font-weight="bold" font-family="system-ui, sans-serif" font-size="15">Time24View</text>
+  <line x1="250" y1="552" x2="450" y2="552" stroke="#2a9d8f" />
+  <text x="260" y="572">- element</text>
+  <line x1="250" y1="582" x2="450" y2="582" stroke="#2a9d8f" />
+  <text x="260" y="600">+ update(model)</text>
+
+  <rect x="475" y="520" width="200" height="90" fill="#d4f1e4" stroke="#2a9d8f" stroke-width="1.5" />
+  <text x="575" y="542" text-anchor="middle" font-weight="bold" font-family="system-ui, sans-serif" font-size="15">Time12View</text>
+  <line x1="475" y1="552" x2="675" y2="552" stroke="#2a9d8f" />
+  <text x="485" y="572">- element</text>
+  <line x1="475" y1="582" x2="675" y2="582" stroke="#2a9d8f" />
+  <text x="485" y="600">+ update(model)</text>
+
+  <rect x="700" y="520" width="200" height="90" fill="#d4f1e4" stroke="#2a9d8f" stroke-width="1.5" />
+  <text x="800" y="542" text-anchor="middle" font-weight="bold" font-family="system-ui, sans-serif" font-size="15">LogView</text>
+  <line x1="700" y1="552" x2="900" y2="552" stroke="#2a9d8f" />
+  <text x="710" y="572">- logElement</text>
+  <line x1="700" y1="582" x2="900" y2="582" stroke="#2a9d8f" />
+  <text x="710" y="600">+ update(model)</text>
+
+  <!-- Views implement Observer<ClockModel> (dashed, hollow triangle) -->
+  <g stroke="#1d3557" stroke-width="1.5" stroke-dasharray="6 4" fill="none">
+    <line x1="350" y1="520" x2="350" y2="470" />
+    <line x1="575" y1="520" x2="575" y2="470" />
+    <line x1="800" y1="520" x2="800" y2="470" />
+    <line x1="350" y1="470" x2="800" y2="470" />
+    <line x1="800" y1="470" x2="800" y2="102" marker-end="url(#triangle)" />
+  </g>
+  <text x="790" y="270" text-anchor="end" font-family="system-ui, sans-serif" font-size="12">implements</text>
+  <text x="790" y="286" text-anchor="end" font-family="system-ui, sans-serif" font-size="12">Observer&lt;ClockModel&gt;</text>
+
+  <!-- Views read the model -->
+  <line x1="420" y1="518" x2="440" y2="430" stroke="#1d3557" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#arrow)" />
+  <text x="438" y="462" font-family="system-ui, sans-serif" font-size="12" fill="#5b6472">reads</text>
+
+  <!-- main.ts note -->
+  <text x="20" y="450" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">main.ts</text>
+  <text x="20" y="470" font-family="system-ui, sans-serif" font-size="12" fill="#5b6472">creates the model, the 3 views</text>
+  <text x="20" y="486" font-family="system-ui, sans-serif" font-size="12" fill="#5b6472">and the controller, and adds</text>
+  <text x="20" y="502" font-family="system-ui, sans-serif" font-size="12" fill="#5b6472">each view as an observer</text>
+
+  <!-- key -->
+  <text x="20" y="40" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">Key</text>
+  <text x="20" y="58" font-family="system-ui, sans-serif" font-size="12" fill="#5b6472">+ public   - private   # protected</text>
+  <text x="20" y="76" font-family="system-ui, sans-serif" font-size="12" fill="#5b6472">italic name = abstract / interface</text>
+</svg>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Clock</title>
+  </head>
+  <body>
+    <main>
+      <h1>Clock</h1>
+      <p class="muted">Use the buttons to change the time. Every change is added to the log below.</p>
+
+      <!-- Time24View and Time12View write the time into these two elements -->
+      <p class="label">24 hour</p>
+      <p id="time-24" class="time">--:--</p>
+      <p class="label">12 hour</p>
+      <p id="time-12" class="time">--:--</p>
+
+      <p>
+        <button id="hour-down">- hour</button>
+        <button id="hour-up">+ hour</button>
+        <button id="minute-down">- minute</button>
+        <button id="minute-up">+ minute</button>
+      </p>
+      <p>
+        <button id="now-button" class="secondary">Set to current time</button>
+      </p>
+
+      <!-- LogView writes its log messages here (instead of to the console) -->
+      <h2>Log</h2>
+      <textarea id="log" rows="8" readonly></textarea>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

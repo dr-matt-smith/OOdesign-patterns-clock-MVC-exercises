@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test report - mvc_clock3</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --text:#1b1f2a; --muted:#5b6472; --line:#dde1e7;
+          --good:#2a9d8f; --bad:#e63946; --warn:#f4a261; --none:#457b9d; --pre:#f1f3f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#16191f; --card:#1f232b; --text:#e8eaed; --muted:#9aa3ad; --line:#333a45; --pre:#14171c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 16px; }
+  header.banner { border-radius: 10px; padding: 16px 20px; color: #fff; margin-bottom: 16px; }
+  header.good { background: var(--good); } header.bad { background: var(--bad); } header.none { background: var(--none); }
+  header h1 { margin: 0; font-size: 24px; } header p { margin: 4px 0 0; opacity: .9; }
+  .tiles { display:grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin-bottom: 16px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px; text-align:center; }
+  .tile b { display:block; font-size: 26px; } .tile span { color: var(--muted); font-size: 13px; }
+  .tile.good b { color: var(--good); } .tile.bad b { color: var(--bad); } .tile.warn b { color: var(--warn); }
+  section { background:var(--card); border:1px solid var(--line); border-radius:10px; padding: 4px 16px 12px; margin-bottom: 16px; }
+  h2 { font-size: 18px; } h3 { font-size: 15px; margin: 12px 0 4px; }
+  pre { background:var(--pre); border:1px solid var(--line); border-radius:6px; padding:10px; overflow-x:auto; font-size:13px; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
+  .where { color: var(--muted); }
+  .actual { color: var(--bad); } .expected { color: var(--good); }
+  .icon { display:inline-block; width: 1.2em; font-weight: bold; }
+  .icon.pass { color: var(--good); } .icon.fail { color: var(--bad); } .icon.skip { color: var(--warn); }
+  .code { font: 12px ui-monospace, Menlo, monospace; padding: 1px 6px; border-radius: 4px; color: #fff; }
+  .code.error { background: var(--bad); } .code.warn { background: var(--warn); color: #1b1f2a; }
+  .hint { color: var(--muted); font-size: 13px; margin-left: 1em; }
+  ul.problems { padding-left: 1.2em; } ul.problems li { margin-bottom: 6px; }
+  ul.tree { list-style: none; padding-left: 1.2em; margin: 2px 0; }
+  h3.file { font-family: ui-monospace, Menlo, monospace; color: var(--muted); font-weight: normal; }
+  details summary { cursor: pointer; color: var(--muted); }
+  footer { color: var(--muted); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <header class="banner none">
+    <h1>No tests yet</h1>
+    <p>mvc_clock3 &middot; 11/5/2026, 10:24:31 AM</p>
+  </header>
+  <div class="tiles">
+    <div class="tile "><b>0</b><span>passed</span></div>
+    <div class="tile "><b>0</b><span>failed</span></div>
+    <div class="tile "><b>0</b><span>skipped</span></div>
+    <div class="tile "><b>0</b><span>type errors</span></div>
+    <div class="tile "><b>0</b><span>lint warnings</span></div>
+  </div>
+  
+  
+  
+  
+  <section><h2>All tests</h2><p><em>No tests found in tests/.</em></p></section>
+  <section><details><summary>TAP output</summary><pre>TAP version 14
+1..0</pre></details></section>
+  <footer>Made by tools/test_report.ts &middot; Markdown version: summary.md</footer>
+</main>
+</body>
+</html>
